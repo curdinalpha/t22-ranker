@@ -1,0 +1,18 @@
+{
+  "name": "curdinalpha-t22-ranker",
+  "version": "1.0.0",
+  "description": "Deterministic zero-network, zero-dependency pre-token protocol ranker (derivative stripper + implied launch FDV bands + category playbooks)",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": { "node": ">=22.6.0" },
+  "bin": { "t22-ranker": "./ranker.ts" },
+  "scripts": {
+    "test": "node --experimental-strip-types --no-warnings --test ranker.test.ts",
+    "synth": "node --experimental-strip-types --no-warnings ranker.ts gen --count 4200 --seed t22 --out corpus.json",
+    "rank": "node --experimental-strip-types --no-warnings ranker.ts rank --in corpus.json --out board.json",
+    "demo": "node --experimental-strip-types --no-warnings ranker.ts --generate-synthetic 4200 --seed t22 --out board.json"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
